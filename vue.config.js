@@ -26,6 +26,7 @@ module.exports = {
     config.resolve.alias
       .set('api', resolve('src/api'))
       .set('components', resolve('src/components'))
+      .set('pages', resolve('src/pages'))
       .set('css', resolve('src/assets/css'))
       .set('js', resolve('src/assets/js'))
   }
