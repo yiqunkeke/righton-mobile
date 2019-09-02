@@ -11,11 +11,20 @@ const constantRouterMap = [
             require(['pages/home/index'], resolve)
         },
         meta: { title: '首页' }
+    },
+    {
+        path: '/about',
+        name: 'About',
+        component: resolve => {
+            require(['pages/about/index'], resolve)
+        },
+        meta: { title: '关于睿昂' }
     }
 ]
 
 export default new Router({
     routes: constantRouterMap,
+    mode: "history", // 必须设置
     scrollBehavior() {
         return { x:0, y: 0}
     }

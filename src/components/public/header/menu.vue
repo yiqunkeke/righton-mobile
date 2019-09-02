@@ -10,12 +10,16 @@
                         :key="index">
                         <dl>
                             <dt @click="toggle(item)">
-                                {{ item.title }}
+                                <span @click="handleClick(item.path)">
+                                    {{ item.title }}
+                                </span>
                             </dt>
                             <template v-if="item.children && subVisible">
                                 <dd v-for="(it, idx) in item.children" 
                                     :key="idx">
-                                    {{ it }}
+                                    <span @click="handleClick(it.path)">
+                                        {{it.title}}
+                                    </span>
                                 </dd>
                             </template>
                         </dl>
@@ -49,6 +53,15 @@ export default {
            if(item.children) {
                this.subVisible = !this.subVisible
            }
+       },
+       // 跳转
+       handleClick(path) {
+           if(path){
+               this.$router.push({ path })
+           } else {
+               return false
+           }
+           this.hide()
        }
    }
 }

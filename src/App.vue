@@ -2,10 +2,11 @@
   <div id="app">
     <MyHeader/>
     <div class="wrap">
-      <cube-scroll>
+      <cube-scroll ref="scroll">
         <router-view/>
       </cube-scroll>
     </div>
+    <img src="./assets/img/top.svg" alt="返回顶部" class="top" @click="handleTop"/>
     <MyFooter/>
   </div>
 </template>
@@ -19,6 +20,11 @@ export default {
   components: {
     MyHeader,
     MyFooter
+  },
+  methods: {
+    handleTop() {
+      this.$refs.scroll.scrollTo(0, 0, 1000)
+    }
   }
 }
 </script>
@@ -32,4 +38,12 @@ export default {
   top $headerHeight
   bottom $footerHeight
 }
+.top {
+    position fixed
+    bottom 1.84rem
+    right 0.2rem
+    width 0.5rem
+    height 0.5rem
+    z-index 2
+  }
 </style>
