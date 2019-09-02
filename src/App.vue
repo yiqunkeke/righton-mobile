@@ -2,8 +2,9 @@
   <div id="app">
     <MyHeader/>
     <div class="wrap">
-      <router-view/>
-      <copyright/>
+      <cube-scroll>
+        <router-view/>
+      </cube-scroll>
     </div>
     <MyFooter/>
   </div>
@@ -12,14 +13,12 @@
 <script>
 import MyHeader from 'components/public/header/index.vue'
 import MyFooter from 'components/public/footer/index.vue'
-import copyright from 'components/copyright'
 
 export default {
   name: 'app',
   components: {
     MyHeader,
-    MyFooter,
-    copyright
+    MyFooter
   }
 }
 </script>
@@ -27,7 +26,10 @@ export default {
 <style scoped lang="stylus">
 @import '~css/varibles.styl'
 .wrap {
-  margin-top $headerHeight 
-  margin-bottom $footerHeight
+  position absolute
+  left 0
+  right 0
+  top $headerHeight
+  bottom $footerHeight
 }
 </style>
