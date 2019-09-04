@@ -29,5 +29,6 @@ module.exports = {
       .set('pages', resolve('src/pages'))
       .set('css', resolve('src/assets/css'))
       .set('js', resolve('src/assets/js'))
+      .set('img', resolve('src/assets/img'))
   }
 }
