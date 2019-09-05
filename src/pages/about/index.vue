@@ -50,8 +50,7 @@
                                         </a>
                                     </cube-slide-item>
                                     <template slot="dots"  slot-scope="props">
-                                        <span v-for="(it, idx) in props.dots" :key="idx" class="myDot">
-                                            <img src="../../assets/img/about/dot.svg"/>
+                                        <span v-for="(it, idx) in props.dots" :key="idx" :class="{active: props.current === idx}" class="myDot">
                                         </span>
                                     </template>
                         </cube-slide>  
