@@ -14,3 +14,70 @@
         font-size .34rem
     }
 }
+.map {
+    background url('../../img/contact/map.jpg') no-repeat
+    background-size cover
+    width 5.73rem
+    height 3.40rem
+    margin 1.5rem auto 0.7rem auto
+}
+.address {
+    width 5.73rem
+    margin 0 auto .95rem auto
+    line-height .56rem
+    h2 {
+        font-size .28rem
+        color $color-title
+        font-weight bold
+    }
+    p {
+        font-size .24rem
+        color $color-context
+        em {
+            color $color-title
+        }
+    }
+}
+.email {
+    width 5.82rem
+    border-bottom 1px solid $color-title
+    padding-left .64rem
+    padding-right .64rem
+    padding-bottom .42rem
+    margin 0 auto .1rem auto
+    display flex
+    justify-content space-between
+    p {
+        font-size .24rem
+        color $color-context
+        line-height .48rem
+        em {
+            color $color-title
+        }
+    }
+    img {
+        display block
+        width 1.2rem
+        height 1.5rem
+    }
+}
+.subCompany {
+    line-height .48rem
+    border-bottom 1px dashed #a7a7a7
+    padding-bottom .37rem
+    padding-top .37rem
+    width 5.73rem
+    margin 0 auto
+    dt {
+        font-size .24rem
+        font-weight bold
+        color $color-title
+    }
+    dd {
+        color $color-context
+    }
+    &:last-child {
+        border-bottom 0
+        padding-bottom 1.2rem
+    }
+}
