@@ -35,6 +35,14 @@ const constantRouterMap = [
             require(['pages/subCompany/index'], resolve)
         },
         meta: { title: '睿昂子公司' }
+    },
+    {
+        path: '/news',
+        name: 'news',
+        component: resolve => {
+            require(['pages/news/index'], resolve)
+        },
+        meta: { title: '新闻中心' }
     }
 ]
 
