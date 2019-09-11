@@ -32,7 +32,113 @@
   }
 }
 .cube-slide-item {
-  padding: 0 .9rem
-  
+    /*新闻列表*/
+    .news {
+        padding 1rem .5rem 0 .5rem
+        li {
+            padding-top .5rem
+            padding-bottom .5rem
+            border-bottom 1px solid #cacaca
+            display flex
+            .time {
+                width 1.36rem
+                height 1.36rem
+                background $color-blue
+                color $color-white
+                text-align center
+                display flex
+                flex-direction column
+                justify-content center
+                margin-right 0.3rem
+                strong {
+                    font-weight bold
+                    font-size .72rem
+                }
+                span {
+                    font-size .18rem
+                }
+            }
+            .title {
+                width 4.8rem
+                white-space normal
+                h1 {
+                    font-size .24rem
+                    color $$color-title
+                    font-size .24rem
+                    line-height .4rem
+                }
+                p {
+                    font-size .24rem
+                    color $color-context
+                    margin-top .2rem
+                    line-height .42rem
+                }
+            }
+        }
+    }
+    .notice {
+        padding-top 0
+        padding-bottom .5rem
+        li {
+            .time {
+                background $color-yellow
+            }
+            .title {
+                h1{
+                    color $color-yellow
+                    font-weight bold
+                }
+            }
+        }
+        li:last-of-type {
+            border-bottom none
+        }
+    }
+    /*新闻详情*/
+    .newsTitle {
+        font-size .28rem
+        color $color-blue
+        text-align center
+        font-weight bold
+        line-height .50rem
+        margin-top 1.5rem
+        margin-bottom .56rem
+    }
+    .newsAuthor {
+        font-size .21rem
+        color #8c8c8c
+        text-align center
+        margin-bottom .74rem
+    }
+    .newsPara {
+        padding-left .9rem
+        padding-right .9rem
+        font-size .24rem
+        color $color-context
+        text-align justify
+        line-height .48rem
+        white-space normal
+        img {
+            display block
+            width 100%
+            height auto
+        }
+        .imgDesc {
+            display block
+            color #8c8c8c
+            margin-top .56rem
+            margin-bottom .56rem
+            text-align center
+        }
+    }
+    .newsSecTitle {
+        font-size .22rem
+        color $color-blue
+        text-align center
+        font-weight bold
+        line-height .50rem
+        margin-top .56rem
+        margin-bottom .56rem
+    }
 }
 

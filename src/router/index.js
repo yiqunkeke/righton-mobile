@@ -43,6 +43,14 @@ const constantRouterMap = [
             require(['pages/news/index'], resolve)
         },
         meta: { title: '新闻中心' }
+    },
+    {
+        path: '/news/detail',
+        name: 'newsDetail',
+        component: resolve => {
+            require(['pages/news/detail'], resolve)
+        },
+        meta: { title: '新闻中心' }
     }
 ]
 
