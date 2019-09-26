@@ -46,11 +46,11 @@ export default {
                },
                {
                    title: '联系我们',
-                   path: 'contact'
+                   path: '/contact'
                },
                {
                    title: '允限销',
-                   path: 'sale'
+                   path: '/sale'
                }
            ]
        }

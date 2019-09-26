@@ -1,0 +1,120 @@
+ @import '../varibles.styl'
+
+ .desc {
+     background $color-blue
+     padding: 1rem .85rem .6rem .85rem
+     color $color-white
+     h1 {
+         font-size .32rem
+         text-align center
+         margin-bottom .55rem
+     }
+     p {
+         font-size .18rem
+         line-height .4rem
+         text-align justify
+         white-space normal
+         margin-bottom .6rem
+     }
+ }
+/*列表*/
+ .list {
+     margin .6rem .5rem
+     border 1px solid #e5e5e5
+     li {
+         height .6rem
+         line-height .6rem
+         font-size .18rem
+         color $color-context
+         padding .15rem .3rem
+         border-bottom 1px solid #e5e5e5
+     }
+     li:last-of-type {
+         border-bottom none
+     }
+ }
+ /*详情*/
+ .detail {
+     header {
+        text-align center
+        color $color-blue
+        margin 1.2rem .26rem .6rem .26rem
+        padding-bottom .6rem
+        border-bottom 1px solid #d5d5d5
+        h1 {
+            font-size .32rem
+            font-weight bold
+            margin-bottom .3rem
+        }
+        h6 {
+            font-size .24rem
+        }
+     }
+     dl {
+         margin-left .5rem
+         margin-right .5rem
+         margin-bottom .8rem
+         dt {
+             font-size 0.28rem
+             color $color-blue
+             margin-bottom .46rem
+             font-weight bold
+         }
+         dd {
+             font-size .24rem
+             line-height .48rem
+             margin-bottom .56rem
+             h2.character {
+                 font-weight bold
+                 color $color-title
+                 span.dot {
+                     width .16rem
+                     height .16rem
+                     background $color-blue
+                     border-radius 50%
+                     display inline-block
+                     margin-right .15rem
+                 }
+             }
+             p.content {
+                 color $color-context
+                 padding-left .36rem
+             }
+         }
+         dd.significance {
+             span.dot {
+                     width .16rem
+                     height .16rem
+                     background $color-blue
+                     border-radius 50%
+                     display inline-block
+                     margin-right .15rem
+                     float left
+                     position relative
+                     top .13rem
+             }
+             p.content {
+                 padding-left 0
+                 float left
+                 width 6.13rem
+             }
+         }
+     }
+     .specification {
+         color $color-context
+         line-height .48rem
+         font-size .24rem
+         padding-left .82rem
+         margin-bottom 1rem
+     }
+     dl.specList {
+         padding-top .8rem
+         border-top 1px solid #acabab
+         padding-left .25rem
+         padding-right .25rem
+         dd {
+             color $color-title
+             font-weight bold
+         }
+     }
+ }

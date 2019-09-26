@@ -50,7 +50,23 @@ const constantRouterMap = [
         component: resolve => {
             require(['pages/news/detail'], resolve)
         },
-        meta: { title: '新闻中心' }
+        meta: { title: '新闻详情' }
+    },
+    {
+        path: '/diagnosis',
+        name: 'diagnosis',
+        component: resolve => {
+            require(['pages/diagnosis/index'], resolve)
+        },
+        meta: { title: '诊断试剂' }
+    },
+    {
+        path: '/diagnosis/detail',
+        name: 'diagnosisDetail',
+        component: resolve => {
+            require(['pages/diagnosis/detail'], resolve)
+        },
+        meta: { title: '诊断试剂详情' }
     }
 ]
 

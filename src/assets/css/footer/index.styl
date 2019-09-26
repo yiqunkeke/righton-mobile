@@ -1,25 +1,42 @@
  @import '../varibles.styl'
 
 .footerWrap{
-    position fixed 
-    bottom 0
-    left 0
-    right 0
-    z-index 2
-    height $footerHeight
-    background-color $color-blue
-    color $color-white
-    display flex
-    justify-content space-around
-    align-items center 
-    li {
-        width 25%
-        height 100%
-        line-height 1rem
-        text-align center
-        border-right 1px solid $border-color
+    ul {
+        position fixed 
+        bottom 0
+        left 0
+        right 0
+        z-index 2
+        height $footerHeight
+        background-color $color-blue
+        color $color-white
+        display flex
+        justify-content space-around
+        align-items center 
+        li {
+            width 25%
+            height 100%
+            line-height 1rem
+            text-align center
+            border-right 1px solid $border-color
+        }
+        li:last-of-type {
+            border-right none
+        }
     }
-    li:nth-child(4){
-        border-right none
+    dl {
+        position fixed
+        left 0
+        bottom 1rem
+        z-index 3
+        background-color $color-blue
+        color $color-white
+        dd {
+            border-bottom 1px solid $border-color
+            height 1rem
+            line-height 1rem
+            padding-left .2rem
+            padding-right .2rem
+        }
     }
 }
