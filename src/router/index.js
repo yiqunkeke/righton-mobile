@@ -5,6 +5,14 @@ Vue.use(Router)
 
 const constantRouterMap = [
     {
+        path: '/login',
+        name: 'Login',
+        component: resolve => {
+            require(['pages/login/index'], resolve)
+        },
+        meta: { title: '登录' }
+    },
+    {
         path: '/',
         name: 'Home',
         component: resolve => {

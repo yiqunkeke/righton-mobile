@@ -51,6 +51,10 @@ export default {
                {
                    title: '允限销',
                    path: '/sale'
+               },
+               {
+                   title: '登录',
+                   path: '/login'
                }
            ]
        }
@@ -62,7 +66,7 @@ export default {
                    menu: 'menu'
                }
            })
-           this.headerMenuComp.show()
+           this.headerMenuComp.show();
        }
    }
 }
