@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Toast } from 'cube-ui'
 
 const service = axios.create({
     baseURL: process.env.baseURL,
@@ -8,6 +9,9 @@ const service = axios.create({
 //请求拦截
 service.interceptors.request.use(
     config => {
+        Toast.$create({
+            type: 'loading'
+        }).show()
         return config;
     },
     err => {
@@ -21,6 +25,15 @@ service.interceptors.response.use(
         return res;
     },
     err => {
+        let { status, data } = err.response;
+        switch (status) {
+            case 401:
+                Toast.$create({
+                    time: 1000,
+                    txt: `${data.errorMessage}`,
+                    type: 'error'
+                }).show()
+        }
         return Promise.reject(err)
     }
 )

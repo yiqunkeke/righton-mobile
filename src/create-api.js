@@ -1,8 +1,7 @@
 import { createAPI } from 'cube-ui'
 import Vue from 'vue'
 import HeaderMenu from 'components/public/header/menu'
-import Toast from 'components/Toast'
 
 // 声明组件以API式调用
-createAPI(Vue, HeaderMenu) // 调用---> this.$createHeaderMenu
-createAPI(Vue, Toast)
+// 在.vue组件中调用方式：this.$createHeaderMenu
+createAPI(Vue, HeaderMenu) 
