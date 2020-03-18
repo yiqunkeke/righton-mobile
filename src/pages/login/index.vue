@@ -7,21 +7,29 @@
 </template>
 
 <script>
-import { login } from "@/api/user";
+import { mapActions } from "vuex";
 export default {
     name: "Login",
     data() {
         return {
             username: null,
             password: null,
-            eye: true
+            eye: false
         }
     },
     methods: {
-        async handleLogin() {
-            const res = await login(this.username, this.password);
-            // eslint-disable-next-line no-console
-            console.log(res);
+        ...mapActions(['Login']),
+        // 登录
+        handleLogin() {
+            this.Login({
+                username: this.username,
+                password: this.password
+            })
+            .then(() => {
+                this.$router.push({
+                    path: "/"
+                })
+            })
         }
     }
 }

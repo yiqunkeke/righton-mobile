@@ -7,18 +7,20 @@
                 </div>
                 <ul class="menuList">
                     <li v-for="(item, index) in menu" 
+                        v-if="!item.hidden"
                         :key="index">
                         <dl>
                             <dt @click="toggle(item)">
                                 <span @click="handleClick(item.path)">
-                                    {{ item.title }}
+                                    {{ item.meta.title }}
                                 </span>
                             </dt>
                             <template v-if="item.children && subVisible">
                                 <dd v-for="(it, idx) in item.children" 
+                                    v-if="!it.hidden"
                                     :key="idx">
                                     <span @click="handleClick(it.path)">
-                                        {{it.title}}
+                                        {{it.meta.title}}
                                     </span>
                                 </dd>
                             </template>

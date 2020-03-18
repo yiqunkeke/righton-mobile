@@ -15,6 +15,7 @@ const constantRouterMap = [
     {
         path: '/',
         name: 'Home',
+        hidden: true,
         component: resolve => {
             require(['pages/home/index'], resolve)
         },
@@ -55,6 +56,7 @@ const constantRouterMap = [
     {
         path: '/news/detail',
         name: 'newsDetail',
+        hidden: true,
         component: resolve => {
             require(['pages/news/detail'], resolve)
         },
@@ -71,6 +73,7 @@ const constantRouterMap = [
     {
         path: '/diagnosis/detail',
         name: 'diagnosisDetail',
+        hidden: true,
         component: resolve => {
             require(['pages/diagnosis/detail'], resolve)
         },

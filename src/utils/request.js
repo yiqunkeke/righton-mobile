@@ -9,6 +9,8 @@ const service = axios.create({
 //请求拦截
 service.interceptors.request.use(
     config => {
+        config.headers.Authorization = `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjpbIlJPTEVfU0FMRU1BTiJdLCJleHAiOjE1ODQ1ODg3MjQsInVzZXJuYW1lIjoiemhhbmdkYW4ifQ.6acpDmnTKJgXEbQVMvaZk3AwNeDfEbLjXYM0LlYB6gk`
+        // 设置loading效果
         Toast.$create({
             type: 'loading'
         }).show()
@@ -22,6 +24,7 @@ service.interceptors.request.use(
 // 响应拦截
 service.interceptors.response.use(
     res => {
+        Toast.$create().hide()
         return res;
     },
     err => {
