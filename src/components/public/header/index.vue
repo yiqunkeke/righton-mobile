@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import routes from "@/router";
+import { mapGetters } from "vuex";
 export default {
    name: 'myHeader',
    data() {
@@ -57,21 +57,17 @@ export default {
         //            title: '登录',
         //            path: '/login'
         //        }
-        //    ],
-           menu: []
+        //    ]
        }
    },
-   mounted() {
-       let routeArray = routes.options.routes
-       console.log(routes);
-       console.log(routeArray);
-       this.menu = routeArray;
+   computed: {
+       ...mapGetters(["routers"])
    },
    methods: {
        showMenu() {
            this.headerMenuComp = this.headerMenuComp || this.$createHeaderMenu({
                $props: {
-                   menu: 'menu'
+                   menu: 'routers'
                }
            })
            this.headerMenuComp.show();

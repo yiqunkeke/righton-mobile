@@ -52,8 +52,8 @@ export default {
    },
    methods: {
        toggle(item){
-           if(item.children) {
-               this.subVisible = !this.subVisible
+           if(item.children && item.children.length > 1) {
+            //    this.subVisible = !this.subVisible
            }
        },
        // 跳转

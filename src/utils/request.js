@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Toast } from 'cube-ui'
+import { getToken } from "@/utils/token"
 
 const service = axios.create({
     baseURL: process.env.baseURL,
@@ -9,7 +10,7 @@ const service = axios.create({
 //请求拦截
 service.interceptors.request.use(
     config => {
-        config.headers.Authorization = `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjpbIlJPTEVfU0FMRU1BTiJdLCJleHAiOjE1ODQ1ODg3MjQsInVzZXJuYW1lIjoiemhhbmdkYW4ifQ.6acpDmnTKJgXEbQVMvaZk3AwNeDfEbLjXYM0LlYB6gk`
+        config.headers.Authorization = `Bearer ${getToken()}`
         // 设置loading效果
         Toast.$create({
             type: 'loading'
