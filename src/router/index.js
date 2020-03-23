@@ -5,7 +5,7 @@ import { aboutRouter } from "./modules/about" // 关于睿昂
 import { contactRouter } from "./modules/contact"  // 联系我们
 import { newsRouter } from "./modules/news" // 新闻中心
 import { subCompanyRouter } from "./modules/subCompany" // 睿昂子公司
-import { diagnosisRouter } from "./modules/diagnosis" // 诊断试剂
+import { productRouter } from "./modules/product" // 产品与研发
 
 Vue.use(Router)
 
@@ -41,7 +41,7 @@ export const asyncRouterMap = [
     contactRouter,
     newsRouter,
     subCompanyRouter,
-    diagnosisRouter
+    productRouter
 ]
 
 export default new Router({

@@ -11,19 +11,19 @@
                         :key="index">
                         <dl>
                             <dt @click="toggle(item)">
-                                <span @click="handleClick(item.path)">
+                                <span @click="handleClick(item)">
                                     {{ item.meta.title }}
                                 </span>
                             </dt>
-                            <template v-if="item.children && subVisible">
+                            <!-- <template v-if="(item.children > 1) && subVisible">
                                 <dd v-for="(it, idx) in item.children" 
                                     v-if="!it.hidden"
                                     :key="idx">
-                                    <span @click="handleClick(it.path)">
+                                    <span @click="handleClick(it)">
                                         {{it.meta.title}}
                                     </span>
                                 </dd>
-                            </template>
+                            </template> -->
                         </dl>
                     </li>
                 </ul>
@@ -50,20 +50,25 @@ export default {
            subVisible: false
        }
    },
+   mounted() {
+       console.log(this.menu);
+   },
    methods: {
        toggle(item){
+           console.log(item);
            if(item.children && item.children.length > 1) {
-            //    this.subVisible = !this.subVisible
+               this.subVisible = !this.subVisible
            }
        },
        // 跳转
-       handleClick(path) {
+       handleClick(item) {
+           let path = item.path;
            if(path){
                this.$router.push({ path })
            } else {
                return false
            }
-           this.hide()
+        //    this.hide()
        }
    }
 }
