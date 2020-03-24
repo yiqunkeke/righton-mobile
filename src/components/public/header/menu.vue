@@ -7,24 +7,53 @@
                 </div>
                 <ul class="menuList">
                     <li v-for="(item, index) in menu" 
-                        v-if="!item.hidden"
                         :key="index">
-                        <dl>
-                            <dt @click="toggle(item)">
-                                <span @click="handleClick(item)">
-                                    {{ item.meta.title }}
-                                </span>
-                            </dt>
-                            <!-- <template v-if="(item.children > 1) && subVisible">
-                                <dd v-for="(it, idx) in item.children" 
-                                    v-if="!it.hidden"
-                                    :key="idx">
-                                    <span @click="handleClick(it)">
-                                        {{it.meta.title}}
-                                    </span>
-                                </dd>
-                            </template> -->
-                        </dl>
+                        <template v-if="item.children && !item.hidden">
+                            <dl>
+                                <!-- 只有一个子路由 -->
+                                <router-link v-if="item.children.length === 1 &&
+                                             !item.children[0].children &&
+                                             !item.children[0].hidden"
+                                             :to ="item.path + '/' + item.children[0].path"
+                                             :key="item.children[0].name"
+                                             >
+                                    <dt>
+                                        <span v-if="item.children[0].meta && item.children[0].meta.title">
+                                            {{ item.children[0].meta.title }}
+                                        </span>
+                                    </dt>
+                                </router-link>
+                                <!-- 有多个子路由 -->
+                                <template v-if="item.children && item.children.length > 1">
+                                    <!-- 一级菜单 -->
+                                    <dt>
+                                        <span v-if="item.meta && item.meta.title">
+                                            {{item.meta.title}}
+                                        </span>
+                                    </dt>
+                                    <!-- 二级菜单 -->
+                                    <dd v-for="(child, idx) in item.children" :key="idx">
+                                        <template v-if="!child.hidden">
+                                            <router-link :to="item.path + '/' + child.path">
+                                                <span v-if="child.meta && child.meta.title">
+                                                    {{child.meta.title}}
+                                                </span>
+                                            </router-link>
+                                        </template>
+                                    </dd>
+                                </template>
+                            </dl>
+                        </template>
+                        <!-- 如登录：无子路由 -->
+                        <template v-if="!item.children">
+                            <dl>
+                                <router-link :to="item.path">
+                                    <dt v-if="item.meta && item.meta.title">
+                                        {{item.meta.title}}
+                                    </dt>
+                                </router-link>
+                            </dl>
+                        </template>
                     </li>
                 </ul>
             </div>
@@ -48,6 +77,17 @@ export default {
    data(){
        return {
            subVisible: false
+       }
+   },
+   computed: {
+       subMenuConditon() {
+           return function(item) {
+               if(item.children && item.children.length > 0) {
+                   return item.children.some(route => route.hidden)
+               } else {
+                   return true
+               }
+           }
        }
    },
    mounted() {

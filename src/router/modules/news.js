@@ -11,7 +11,7 @@ export const newsRouter = {
             component: resolve => {
                 require(['pages/news/index'], resolve)
             },
-            meta: { title: '新闻中心' }
+            meta: { title: '公司新闻' }
         },
         {
             path: 'detail',
