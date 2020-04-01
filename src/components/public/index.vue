@@ -1,13 +1,18 @@
 <template>
   <div>
-        <MyHeader/>
-        <div class="wrap">
-        <cube-scroll ref="scroll">
-            <router-view/>
-        </cube-scroll>
-        </div>
-        <img src="../../assets/img/top.svg" alt="返回顶部" class="top" @click="handleTop"/>
-        <MyFooter/>
+    <MyHeader />
+    <div class="wrap">
+      <cube-scroll ref="scroll">
+        <router-view />
+      </cube-scroll>
+    </div>
+    <img
+      src="../../assets/img/top.svg"
+      alt="返回顶部"
+      class="top"
+      @click="handleTop"
+    >
+    <MyFooter />
   </div>
 </template>
 
@@ -15,14 +20,14 @@
 import MyHeader from 'components/public/header/index.vue'
 import MyFooter from 'components/public/footer/index.vue'
 export default {
+  components: {
+    MyHeader,
+    MyFooter
+  },
   data() {
     return {
 
     }
-  },
-  components: {
-    MyHeader,
-    MyFooter
   },
   methods: {
     handleTop() {

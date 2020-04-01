@@ -1,15 +1,26 @@
 <template>
   <div class="login">
-      <cube-input v-model="username" type="text" placeholder="请输入用户名"></cube-input>
-      <cube-input v-model="password" type="password" placeholder="请输入密码" :eye="eye"></cube-input>
-      <cube-button @click="handleLogin">登录</cube-button>
+    <cube-input
+      v-model="username"
+      type="text"
+      placeholder="请输入用户名"
+    />
+    <cube-input
+      v-model="password"
+      type="password"
+      placeholder="请输入密码"
+      :eye="eye"
+    />
+    <cube-button @click="handleLogin">
+      登录
+    </cube-button>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
 export default {
-    name: "Login",
+    name: 'Login',
     data() {
         return {
             username: null,
@@ -27,7 +38,7 @@ export default {
             })
             .then(() => {
                 this.$router.push({
-                    path: "/"
+                    path: '/'
                 })
             })
         }

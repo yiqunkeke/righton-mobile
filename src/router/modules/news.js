@@ -1,9 +1,9 @@
-import Layout from "components/public"
+import Layout from 'components/public'
 
 export const newsRouter = {
     path: '/news',
     component: Layout,
-    meta: { title: '新闻中心', roles: ["ROLE_SALEMAN"] },
+    meta: { title: '新闻中心', roles: ['ROLE_SALEMAN'] },
     children: [
         {
             path: '',

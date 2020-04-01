@@ -1,6 +1,6 @@
 <template>
   <div>
-      检测服务
+    检测服务
   </div>
 </template>
 

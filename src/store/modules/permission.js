@@ -1,4 +1,4 @@
-import {constantRouterMap, asyncRouterMap} from "@/router"
+import {constantRouterMap, asyncRouterMap} from '@/router'
 
 /** 判断路由是否有权限
  * 
@@ -42,7 +42,7 @@ const permission = {
         GenerateRoutes(ctx, roles) {
             return new Promise(resolve => {
                 let accessedRouters = filterAsyncRouter(asyncRouterMap, roles);
-                ctx.commit("SET_ROUTERS", accessedRouters);
+                ctx.commit('SET_ROUTERS', accessedRouters);
                 resolve();
             })
         }

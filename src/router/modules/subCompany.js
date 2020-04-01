@@ -1,9 +1,9 @@
-import Layout from "components/public"
+import Layout from 'components/public'
 
 export const subCompanyRouter = {
     path: '/subCompany',
     component: Layout,
-    meta: { title: '睿昂子公司', roles: ["ROLE_SALEMAN"] },
+    meta: { title: '睿昂子公司', roles: ['ROLE_SALEMAN'] },
     children: [
         {
             path: '',

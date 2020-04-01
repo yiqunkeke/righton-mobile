@@ -1,25 +1,33 @@
 <template>
-    <div class="footerWrap">
-        <ul>
-            <li v-for="(item, index) in menu" 
-                :key="index"
-                @click="handleClick(item, index)"
-                ref="tab">
-                {{item.title}}
-            </li>
-        </ul>
-        <dl v-show="subMenuVisible" ref="subMenu">
-            <dd v-for="(it, idx) in subMenu" :key="idx">
-                {{it.title}}
-            </dd>
-        </dl>
-    </div>
+  <div class="footerWrap">
+    <ul>
+      <li
+        v-for="(item, index) in menu" 
+        :key="index"
+        ref="tab"
+        @click="handleClick(item, index)"
+      >
+        {{ item.title }}
+      </li>
+    </ul>
+    <dl
+      v-show="subMenuVisible"
+      ref="subMenu"
+    >
+      <dd
+        v-for="(it, idx) in subMenu"
+        :key="idx"
+      >
+        {{ it.title }}
+      </dd>
+    </dl>
+  </div>
 </template>
 
 <script>
 import { ArrayIsEqual } from '@/utils'
 export default {
-   name: 'myFooter',
+   name: 'MyFooter',
    data() {
        return {
            subMenuVisible: false,

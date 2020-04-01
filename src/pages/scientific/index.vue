@@ -1,6 +1,6 @@
 <template>
   <div>
-      科研试剂
+    科研试剂
   </div>
 </template>
 

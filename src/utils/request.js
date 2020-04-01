@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 import { Toast } from 'cube-ui'
-import { getToken } from "@/utils/token"
+import { getToken } from '@/utils/token'
 
 const service = axios.create({
     baseURL: process.env.baseURL,

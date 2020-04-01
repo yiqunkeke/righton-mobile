@@ -1,9 +1,9 @@
-import Layout from "components/public"
+import Layout from 'components/public'
 
 export const aboutRouter = {
     path: '/about',
     component: Layout,
-    meta: { title: '关于睿昂', roles: ["ROLE_SALEMAN"] },
+    meta: { title: '关于睿昂', roles: ['ROLE_SALEMAN'] },
     children: [
         {
             path: '',

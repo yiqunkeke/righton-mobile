@@ -1,70 +1,82 @@
 <template>
-    <div>
-        <h1 class="banner">
-            <p>睿昂子公司<br/>RIGHTON SUBSIDIARY<br/><em>源奇生物  |  苏州云泰  |  百泰基因</em></p>
+  <div>
+    <h1 class="banner">
+      <p>睿昂子公司<br>RIGHTON SUBSIDIARY<br><em>源奇生物  |  苏州云泰  |  百泰基因</em></p>
+    </h1>
+    <cube-tab-bar
+      v-model="selectedLabel"
+      :data="tabLabels"
+      @change="changeTab"
+    />
+    <cube-slide
+      ref="slide"
+      :loop="loop"
+      :auto-play="autoPlay"
+      :show-dots="showDots"
+      :options="slideOptions"
+      :initial-index="initalIndex"
+      @change="changePage"
+    >
+      <cube-slide-item>
+        <h1>
+          <img
+            src="../../assets/img/subCompany/yuanqi.gif"
+            alt="源奇生物"
+          >
         </h1>
-        <cube-tab-bar v-model="selectedLabel"
-                      :data="tabLabels"
-                      @change="changeTab">
-        </cube-tab-bar>
-        <cube-slide ref="slide"
-                    :loop="loop"
-                    :auto-play="autoPlay"
-                    :show-dots="showDots"
-                    :options="slideOptions"
-                    :initial-index="initalIndex"
-                    @change="changePage">
-                    <cube-slide-item>
-                        <h1>
-                            <img src="../../assets/img/subCompany/yuanqi.gif" alt="源奇生物"/>
-                        </h1>
-                        <p>
-                            上海源奇生物医药科技有限公司成立于2010年1月。是致力于个体化分子诊断试剂产品的研发、生产、销售，及检测服务。
-                            精准医疗分子诊断试剂是企业的发展方向，研发和规模化生产具有国际先进水平的个体化用药基因突变和基因表达检测试剂盒，
-                            为临床医生对患者的诊疗提供一体化解决方案，使患者及时得到个体化诊断及合理化治疗。目前企业研发产品近百种，
-                            拥有符合国家食品药品监督管理局(CFDA)体外诊断试剂生产体系要求的洁净厂房近1000平米，并有四大类成熟产品完成研发下线，
-                            已通过CFDA的审核，获得产品注册证。
-                        </p>
-                        <div class="website">
-                            www.yqbiomed.com
-                        </div>
-                    </cube-slide-item>
-                    <cube-slide-item>
-                        <h1>
-                            <img src="../../assets/img/subCompany/yuntai.gif" alt="云泰生物"/>
-                        </h1>
-                        <p>
-                            苏州云泰生物医药科技有限公司成立于2013年1月，是上海睿昂基因科技股份有限公司全资子公司。
-                            位于苏州纳米工业园内，拥有符合国家食品药品监督管理局(CFDA)体外诊断试剂生产体系要求的洁净厂房近1000平米。
-                            是一家集生产、研发、销售为一体的高新技术企业。
-                        </p>
-                    </cube-slide-item>
-                    <cube-slide-item>
-                        <h1>
-                            <img src="../../assets/img/subCompany/baitai.gif" alt="百泰基因"/>
-                        </h1>
-                        <p>
-                            武汉百泰生物技术有限公司是上海睿昂基因科技股份有限公司的全资子公司，位于武汉东湖高新技术开发区光谷生物城内，
-                            主营业务涵盖分子生物技术，是一家研发、生产、销售，是集科、工、贸为一体的高新技术企业。
-                            研发和规模化生产具有国际先进水平的个体化用药基因突变和基因表达检测试剂盒，
-                            为临床医生对患者的诊疗提供一体化解决方案，目前企业研发产品近百种，
-                            拥有符合国家食品药品监督管理局(CFDA)体外诊断试剂生产体系要求的洁净厂房近1000平米，
-                            已通过有24个产品获得CFDA产品注册证。
-                        </p>
-                        <div class="website">
-                            www.biotgene.com
-                        </div>
-                    </cube-slide-item>
-        </cube-slide>
-        <copyright/>  
-    </div>
+        <p>
+          上海源奇生物医药科技有限公司成立于2010年1月。是致力于个体化分子诊断试剂产品的研发、生产、销售，及检测服务。
+          精准医疗分子诊断试剂是企业的发展方向，研发和规模化生产具有国际先进水平的个体化用药基因突变和基因表达检测试剂盒，
+          为临床医生对患者的诊疗提供一体化解决方案，使患者及时得到个体化诊断及合理化治疗。目前企业研发产品近百种，
+          拥有符合国家食品药品监督管理局(CFDA)体外诊断试剂生产体系要求的洁净厂房近1000平米，并有四大类成熟产品完成研发下线，
+          已通过CFDA的审核，获得产品注册证。
+        </p>
+        <div class="website">
+          www.yqbiomed.com
+        </div>
+      </cube-slide-item>
+      <cube-slide-item>
+        <h1>
+          <img
+            src="../../assets/img/subCompany/yuntai.gif"
+            alt="云泰生物"
+          >
+        </h1>
+        <p>
+          苏州云泰生物医药科技有限公司成立于2013年1月，是上海睿昂基因科技股份有限公司全资子公司。
+          位于苏州纳米工业园内，拥有符合国家食品药品监督管理局(CFDA)体外诊断试剂生产体系要求的洁净厂房近1000平米。
+          是一家集生产、研发、销售为一体的高新技术企业。
+        </p>
+      </cube-slide-item>
+      <cube-slide-item>
+        <h1>
+          <img
+            src="../../assets/img/subCompany/baitai.gif"
+            alt="百泰基因"
+          >
+        </h1>
+        <p>
+          武汉百泰生物技术有限公司是上海睿昂基因科技股份有限公司的全资子公司，位于武汉东湖高新技术开发区光谷生物城内，
+          主营业务涵盖分子生物技术，是一家研发、生产、销售，是集科、工、贸为一体的高新技术企业。
+          研发和规模化生产具有国际先进水平的个体化用药基因突变和基因表达检测试剂盒，
+          为临床医生对患者的诊疗提供一体化解决方案，目前企业研发产品近百种，
+          拥有符合国家食品药品监督管理局(CFDA)体外诊断试剂生产体系要求的洁净厂房近1000平米，
+          已通过有24个产品获得CFDA产品注册证。
+        </p>
+        <div class="website">
+          www.biotgene.com
+        </div>
+      </cube-slide-item>
+    </cube-slide>
+    <copyright />  
+  </div>
 </template>
 
 <script>
 import copyright from 'components/copyright'
 
 export default {
-   name: 'about',
+   name: 'About',
    components:{
        copyright
    },

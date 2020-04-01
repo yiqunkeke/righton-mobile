@@ -1,6 +1,6 @@
 <template>
   <div>
-      应用示例
+    应用示例
   </div>
 </template>
 

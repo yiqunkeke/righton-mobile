@@ -1,70 +1,86 @@
 <template>
-    <div>
-        <h1 class="aboutBanner">
-            <p>关于睿昂<br/>about righton</p>
-        </h1>
-        <cube-tab-bar v-model="selectedLabel"
-                      :data="tabLabels"
-                      @change="changeTab">
-        </cube-tab-bar>
-        <cube-slide ref="slide"
-                    :loop="loop"
-                    :auto-play="autoPlay"
-                    :show-dots="showDots"
-                    :options="slideOptions"
-                    :initial-index="initalIndex"
-                    @change="changePage">
-                    <cube-slide-item class="about">
-                        <h1>关于睿昂</h1>
-                        <p>
-                            上海睿昂基因科技股份有限公司（原上海睿昂生物科技有限公司）成立于2014年，
-                            是致力于临床分子诊断与生物医药科技研发、生产、销售和服务的高科技集团公司。
-                            旗下拥有三家生产型企业：上海源奇生物医药科技有限公司、苏州云泰生物医药科技有限公司和武汉百泰基因工程有限公司，
-                            同时入资了美国创研型分子诊断仪器公司Akonni Biosystems。目前业务涉及血病肿瘤、实体瘤、心脑血管疾病、传染性疾病的检测。
-                            <br/><br/>
-                            在集团创始人睿昂生物集团CEO熊慧女士的带领下，睿昂人艰苦奋斗、努力拼搏，让更多的患者享受负担得起的个体化诊疗服务！
-                            让患者可以得益于用得起的精准医疗，将是睿昂过去、现在以及将来一直坚守的信念！
-                        </p>
-                    </cube-slide-item>
-                    <cube-slide-item>
-                        <h1>睿昂历程</h1>
-                        <cube-slide :options="imgOptions"
-                                    :show-dots="showDots"
-                                    :auto-play="autoPlay"
-                                    :loop="loop"
-                                    :data="progress"
-                                    class="progress">
-                        </cube-slide>    
-                    </cube-slide-item>
-                    <cube-slide-item>
-                        <h1>睿昂荣誉</h1>
-                        <cube-slide :options="imgOptions"
-                                    :auto-play="autoPlay"
-                                    :loop="loop"
-                                    :data="honor"
-                                    class="progress">
-                                    <cube-slide-item v-for="(item, index) in honor" :key="index">
-                                        <a href="#">
-                                            <img :src="item.image"/>
-                                            <p>{{item.desc}}</p>
-                                        </a>
-                                    </cube-slide-item>
-                                    <template slot="dots"  slot-scope="props">
-                                        <span v-for="(it, idx) in props.dots" :key="idx" :class="{active: props.current === idx}" class="myDot">
-                                        </span>
-                                    </template>
-                        </cube-slide>  
-                    </cube-slide-item>
-        </cube-slide>
-        <copyright/>  
-    </div>
+  <div>
+    <h1 class="aboutBanner">
+      <p>关于睿昂<br>about righton</p>
+    </h1>
+    <cube-tab-bar
+      v-model="selectedLabel"
+      :data="tabLabels"
+      @change="changeTab"
+    />
+    <cube-slide
+      ref="slide"
+      :loop="loop"
+      :auto-play="autoPlay"
+      :show-dots="showDots"
+      :options="slideOptions"
+      :initial-index="initalIndex"
+      @change="changePage"
+    >
+      <cube-slide-item class="about">
+        <h1>关于睿昂</h1>
+        <p>
+          上海睿昂基因科技股份有限公司（原上海睿昂生物科技有限公司）成立于2014年，
+          是致力于临床分子诊断与生物医药科技研发、生产、销售和服务的高科技集团公司。
+          旗下拥有三家生产型企业：上海源奇生物医药科技有限公司、苏州云泰生物医药科技有限公司和武汉百泰基因工程有限公司，
+          同时入资了美国创研型分子诊断仪器公司Akonni Biosystems。目前业务涉及血病肿瘤、实体瘤、心脑血管疾病、传染性疾病的检测。
+          <br><br>
+          在集团创始人睿昂生物集团CEO熊慧女士的带领下，睿昂人艰苦奋斗、努力拼搏，让更多的患者享受负担得起的个体化诊疗服务！
+          让患者可以得益于用得起的精准医疗，将是睿昂过去、现在以及将来一直坚守的信念！
+        </p>
+      </cube-slide-item>
+      <cube-slide-item>
+        <h1>睿昂历程</h1>
+        <cube-slide
+          :options="imgOptions"
+          :show-dots="showDots"
+          :auto-play="autoPlay"
+          :loop="loop"
+          :data="progress"
+          class="progress"
+        />    
+      </cube-slide-item>
+      <cube-slide-item>
+        <h1>睿昂荣誉</h1>
+        <cube-slide
+          :options="imgOptions"
+          :auto-play="autoPlay"
+          :loop="loop"
+          :data="honor"
+          class="progress"
+        >
+          <cube-slide-item
+            v-for="(item, index) in honor"
+            :key="index"
+          >
+            <a href="#">
+              <img :src="item.image">
+              <p>{{ item.desc }}</p>
+            </a>
+          </cube-slide-item>
+          <template
+            slot="dots"
+            slot-scope="props"
+          >
+            <span
+              v-for="(it, idx) in props.dots"
+              :key="idx"
+              :class="{active: props.current === idx}"
+              class="myDot"
+            />
+          </template>
+        </cube-slide>  
+      </cube-slide-item>
+    </cube-slide>
+    <copyright />  
+  </div>
 </template>
 
 <script>
 import copyright from 'components/copyright'
 
 export default {
-   name: 'about',
+   name: 'About',
    components:{
        copyright
    },

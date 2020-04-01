@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Layout from "components/public"
-import { aboutRouter } from "./modules/about" // 关于睿昂
-import { contactRouter } from "./modules/contact"  // 联系我们
-import { newsRouter } from "./modules/news" // 新闻中心
-import { subCompanyRouter } from "./modules/subCompany" // 睿昂子公司
-import { productRouter } from "./modules/product" // 产品与研发
+import Layout from 'components/public'
+import { aboutRouter } from './modules/about' // 关于睿昂
+import { contactRouter } from './modules/contact'  // 联系我们
+import { newsRouter } from './modules/news' // 新闻中心
+import { subCompanyRouter } from './modules/subCompany' // 睿昂子公司
+import { productRouter } from './modules/product' // 产品与研发
 
 Vue.use(Router)
 
@@ -46,7 +46,7 @@ export const asyncRouterMap = [
 
 export default new Router({
     routes: constantRouterMap,
-    mode: "history", // 必须设置
+    mode: 'history', // 必须设置
     scrollBehavior() {
         return { x:0, y: 0}
     }

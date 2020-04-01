@@ -1,14 +1,20 @@
 <template>
-   <div class="headerWrap">
-       <router-link tag="h1" to="/"></router-link>
-       <div class="menu" @click="showMenu"></div>
-   </div>
+  <div class="headerWrap">
+    <router-link
+      tag="h1"
+      to="/"
+    />
+    <div
+      class="menu"
+      @click="showMenu"
+    />
+  </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 export default {
-   name: 'myHeader',
+   name: 'MyHeader',
    data() {
        return {
         //    menu: [
@@ -61,7 +67,7 @@ export default {
        }
    },
    computed: {
-       ...mapGetters(["routers"])
+       ...mapGetters(['routers'])
    },
    methods: {
        showMenu() {

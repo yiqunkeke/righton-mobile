@@ -1,9 +1,9 @@
-import Layout from "components/public"
+import Layout from 'components/public'
 
 export const productRouter = {
     path: '/product',
     component: Layout,
-    meta: { title: '产品与研发', roles: ["ROLE_SALEMAN"] },
+    meta: { title: '产品与研发', roles: ['ROLE_SALEMAN'] },
     children: [
         {
             path: 'diagnosis',
