@@ -7,10 +7,10 @@
 <script>
 export default {
    name: 'Copyright',
-   data() {
-       return {}
+   data () {
+       return {};
    },
-}
+};
 </script>
 
 <style scoped lang="stylus">

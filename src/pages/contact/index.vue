@@ -49,16 +49,16 @@
 </template>
 
 <script>
-import copyright from 'components/copyright'
+import copyright from 'components/copyright';
 export default {
    name: 'Contact',
    components:{
        copyright
    },
-   data() {
-       return {}
+   data () {
+       return {};
    },
-}
+};
 </script>
 
 <style lang="stylus">

@@ -1,4 +1,4 @@
-import Layout from 'components/public'
+import Layout from 'components/public';
 
 export const newsRouter = {
     path: '/news',
@@ -9,7 +9,7 @@ export const newsRouter = {
             path: '',
             name: '',
             component: resolve => {
-                require(['pages/news/index'], resolve)
+                require(['pages/news/index'], resolve);
             },
             meta: { title: '公司新闻' }
         },
@@ -18,10 +18,10 @@ export const newsRouter = {
             name: 'newsDetail',
             hidden: true,
             component: resolve => {
-                require(['pages/news/detail'], resolve)
+                require(['pages/news/detail'], resolve);
             },
             meta: { title: '新闻详情' }
         },
     ]
     
-}
+};

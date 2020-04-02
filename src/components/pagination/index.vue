@@ -11,10 +11,10 @@
 <script>
 export default {
    name: 'Pagination',
-   data() {
-       return {}
+   data () {
+       return {};
    },
-}
+};
 </script>
 
 <style scoped lang="stylus">

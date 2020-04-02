@@ -88,14 +88,14 @@
 </template>
 
 <script>
-import copyright from 'components/copyright'
+import copyright from 'components/copyright';
 
 export default {
    name: 'About',
    components:{
        copyright
    },
-   data() {
+   data () {
        return {
             // tab-bar
             selectedLabel: '公司新闻',
@@ -118,19 +118,19 @@ export default {
                 /* lock y-direction when scrolling horizontally and  vertically at the same time */
                 directionLockThreshold: 0
             }
-       }
+       };
    },
    methods: {
        // tab改变
-       changeTab(current) {
-           this.initalIndex = this.tabLabels.findIndex( item => item.label == current)
+       changeTab (current) {
+           this.initalIndex = this.tabLabels.findIndex( item => item.label == current);
        },
        // slide改变
        changePage (current) {
-          this.selectedLabel = this.tabLabels[current].label
+          this.selectedLabel = this.tabLabels[current].label;
        }
    }
-}
+};
 </script>
 
 <style lang="stylus">

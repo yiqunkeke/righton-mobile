@@ -1,4 +1,4 @@
-import Layout from 'components/public'
+import Layout from 'components/public';
 
 export const subCompanyRouter = {
     path: '/subCompany',
@@ -9,10 +9,10 @@ export const subCompanyRouter = {
             path: '',
             name: '',
             component: resolve => {
-                require(['pages/subCompany/index'], resolve)
+                require(['pages/subCompany/index'], resolve);
             },
             meta: { title: '睿昂子公司' }
         }
     ]
     
-}
+};

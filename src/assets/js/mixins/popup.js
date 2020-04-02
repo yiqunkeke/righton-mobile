@@ -1,19 +1,19 @@
-const EVENT_SHOW = 'show'
-const EVENT_HIDE = 'hide'
+const EVENT_SHOW = 'show';
+const EVENT_HIDE = 'hide';
 export default {
-    data() {
+    data () {
         return {
             visible: false
-        }
+        };
     },
     methods: {
-        show() {
-            this.visible = true
-            this.$emit(EVENT_SHOW)
+        show () {
+            this.visible = true;
+            this.$emit(EVENT_SHOW);
         },
-        hide() {
-            this.visible = false
-            this.$emit(EVENT_HIDE)
+        hide () {
+            this.visible = false;
+            this.$emit(EVENT_HIDE);
         }
     }
-}
+};

@@ -77,14 +77,14 @@
 </template>
 
 <script>
-import copyright from 'components/copyright'
+import copyright from 'components/copyright';
 
 export default {
    name: 'About',
    components:{
        copyright
    },
-   data() {
+   data () {
        return {
             // tab-bar
             selectedLabel: '关于睿昂',
@@ -192,19 +192,19 @@ export default {
                     desc: '2017年 上海市“专精特新”中小企业'
                 }
             ]
-       }
+       };
    },
    methods: {
        // tab改变
-       changeTab(current) {
-           this.initalIndex = this.tabLabels.findIndex( item => item.label == current)
+       changeTab (current) {
+           this.initalIndex = this.tabLabels.findIndex( item => item.label == current);
        },
        // slide改变
        changePage (current) {
-          this.selectedLabel = this.tabLabels[current].label
+          this.selectedLabel = this.tabLabels[current].label;
        }
    }
-}
+};
 </script>
 
 <style lang="stylus">

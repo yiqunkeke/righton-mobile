@@ -22,10 +22,16 @@ module.exports = {
         'vue'
     ],
     'rules': {
-        'quotes': ['error', 'single', { 'avoidEscape': true }],
         'no-console': 'off',
+        // 未使用的变量
         'no-unused-vars': 'warn',
+        // 分号
+        'semi':['warn','always'],
+        'semi-spacing': ['error', {'before': false, 'after': true}],
         'no-extra-semi': 'warn',
-        'semi-spacing': ['error', {'before': false, 'after': true}]
+        // 引号
+        'quotes': ['error', 'single', { 'avoidEscape': true }],
+        // 函数
+        'space-before-function-paren': ['warn', 'always']
     }
 };

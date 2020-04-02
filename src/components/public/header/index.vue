@@ -15,7 +15,7 @@
 import { mapGetters } from 'vuex';
 export default {
    name: 'MyHeader',
-   data() {
+   data () {
        return {
         //    menu: [
         //        {
@@ -64,22 +64,22 @@ export default {
         //            path: '/login'
         //        }
         //    ]
-       }
+       };
    },
    computed: {
        ...mapGetters(['routers'])
    },
    methods: {
-       showMenu() {
+       showMenu () {
            this.headerMenuComp = this.headerMenuComp || this.$createHeaderMenu({
                $props: {
                    menu: 'routers'
                }
-           })
+           });
            this.headerMenuComp.show();
        }
    }
-}
+};
 </script>
 
 <style scoped lang="stylus">

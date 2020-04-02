@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import popupMixin from 'js/mixins/popup'
+import popupMixin from 'js/mixins/popup';
 export default {
    name: 'HeaderMenu',
    mixins: [popupMixin],
@@ -82,48 +82,48 @@ export default {
        menu: {
            type: Array,
            default: () => {
-               return []
+               return [];
            }
        }
    },
-   data(){
+   data (){
        return {
            subVisible: false
-       }
+       };
    },
    computed: {
-       subMenuConditon() {
-           return function(item) {
+       subMenuConditon () {
+           return function (item) {
                if(item.children && item.children.length > 0) {
-                   return item.children.some(route => route.hidden)
+                   return item.children.some(route => route.hidden);
                } else {
-                   return true
+                   return true;
                }
-           }
+           };
        }
    },
-   mounted() {
+   mounted () {
        console.log(this.menu);
    },
    methods: {
-       toggle(item){
+       toggle (item){
            console.log(item);
            if(item.children && item.children.length > 1) {
-               this.subVisible = !this.subVisible
+               this.subVisible = !this.subVisible;
            }
        },
        // 跳转
-       handleClick(item) {
+       handleClick (item) {
            let path = item.path;
            if(path){
-               this.$router.push({ path })
+               this.$router.push({ path });
            } else {
-               return false
+               return false;
            }
         //    this.hide()
        }
    }
-}
+};
 </script>
 
 <style scoped lang="stylus">

@@ -1,6 +1,6 @@
 import { login, userInfo } from 'api/user';
 import md5 from 'js-md5';
-import {getToken, setToken, removeToken} from '@/utils/token';
+import {getToken, setToken} from '@/utils/token';
 
 const user = {
     state: {
@@ -21,7 +21,7 @@ const user = {
     },
     actions: {
         // 用户登录
-        Login(ctx, params) {
+        Login (ctx, params) {
             let username = params.username;
             let password = params.password;
             password = md5(password);
@@ -37,12 +37,12 @@ const user = {
                 })
                 .catch(err => {
                     reject(err);
-                })
-            })
+                });
+            });
         },
 
         // 获取用户信息
-        getUserInfo(ctx) {
+        getUserInfo (ctx) {
           return new Promise((resolve, reject) => {
             userInfo()
             .then(res => {
@@ -55,11 +55,11 @@ const user = {
             })
             .catch(err => {
                 reject(err);
-            })
-          })
+            });
+          });
         }
 
     }
-}
+};
 
 export default user;

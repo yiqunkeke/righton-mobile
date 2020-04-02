@@ -17,24 +17,24 @@
 </template>
 
 <script>
-import MyHeader from 'components/public/header/index.vue'
-import MyFooter from 'components/public/footer/index.vue'
+import MyHeader from 'components/public/header/index.vue';
+import MyFooter from 'components/public/footer/index.vue';
 export default {
   components: {
     MyHeader,
     MyFooter
   },
-  data() {
+  data () {
     return {
 
-    }
+    };
   },
   methods: {
-    handleTop() {
-      this.$refs.scroll.scrollTo(0, 0, 1000)
+    handleTop () {
+      this.$refs.scroll.scrollTo(0, 0, 1000);
     }
   }
-}
+};
 </script>
 
 <style scoped lang="stylus">

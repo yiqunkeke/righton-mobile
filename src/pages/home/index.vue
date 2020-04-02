@@ -60,13 +60,13 @@
 </template>
 
 <script>
-import copyright from 'components/copyright'
+import copyright from 'components/copyright';
 export default {
    name: 'Home',
    components:{
        copyright
    }
-}
+};
 </script>
 
 <style scoped lang="stylus">

@@ -93,16 +93,16 @@
 </template>
 
 <script>
-import copyright from 'components/copyright'
+import copyright from 'components/copyright';
 export default {
    name: 'DiagnosisDetail',
    components: {
        copyright
    },
-   data() {
-       return {}
+   data () {
+       return {};
    },
-}
+};
 </script>
 
 <style lang="stylus">

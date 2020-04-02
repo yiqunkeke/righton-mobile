@@ -1,4 +1,4 @@
-import Layout from 'components/public'
+import Layout from 'components/public';
 
 export const aboutRouter = {
     path: '/about',
@@ -9,10 +9,10 @@ export const aboutRouter = {
             path: '',
             name: '',
             component: resolve => {
-                require(['pages/about/index'], resolve)
+                require(['pages/about/index'], resolve);
             },
             meta: { title: '关于睿昂' }
         }
     ]
     
-}
+};

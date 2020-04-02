@@ -1,7 +1,7 @@
-const path = require('path')
+const path = require('path');
 
-function resolve(dir){
-  return path.join(__dirname, dir)
+function resolve (dir){
+  return path.join(__dirname, dir);
 }
 
 module.exports = {
@@ -40,7 +40,7 @@ module.exports = {
     }
   },
   // Vue Cli内部 webpack配置
-  chainWebpack(config) {
+  chainWebpack (config) {
     config.resolve.alias
       .set('@', resolve('src'))
       .set('api', resolve('src/api'))
@@ -48,6 +48,6 @@ module.exports = {
       .set('pages', resolve('src/pages'))
       .set('css', resolve('src/assets/css'))
       .set('js', resolve('src/assets/js'))
-      .set('img', resolve('src/assets/img'))
+      .set('img', resolve('src/assets/img'));
   }
-}
+};

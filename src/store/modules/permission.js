@@ -1,11 +1,11 @@
-import {constantRouterMap, asyncRouterMap} from '@/router'
+import {constantRouterMap, asyncRouterMap} from '@/router';
 
 /** 判断路由是否有权限
  * 
  * @param {*} roles 用户信息角色数组
  * @param {*} route 当前路由
  */
-function hasPermission(roles, route) {
+function hasPermission (roles, route) {
     if(route.meta && route.meta.roles) {
         return roles.some(role => route.meta.roles.indexOf(role) >= 0);
     } else {
@@ -14,16 +14,16 @@ function hasPermission(roles, route) {
 }
 
 // 比较asyncRouterMap 与 roles
-function filterAsyncRouter(asyncRouterMap, roles) {
+function filterAsyncRouter (asyncRouterMap, roles) {
     return asyncRouterMap.filter(route => {
         if(hasPermission(roles, route)) {
             if(route.children && route.children.length) {
-                route.children = filterAsyncRouter(route.children, roles)
+                route.children = filterAsyncRouter(route.children, roles);
             }
             return true;
         }
         return false;
-    })
+    });
 }
 
 
@@ -39,15 +39,15 @@ const permission = {
         }
     },
     actions: {
-        GenerateRoutes(ctx, roles) {
+        GenerateRoutes (ctx, roles) {
             return new Promise(resolve => {
                 let accessedRouters = filterAsyncRouter(asyncRouterMap, roles);
                 ctx.commit('SET_ROUTERS', accessedRouters);
                 resolve();
-            })
+            });
         }
     }
 
-}
+};
 
 export default permission;

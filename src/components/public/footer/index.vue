@@ -25,10 +25,10 @@
 </template>
 
 <script>
-import { ArrayIsEqual } from '@/utils'
+import { ArrayIsEqual } from '@/utils';
 export default {
    name: 'MyFooter',
-   data() {
+   data () {
        return {
            subMenuVisible: false,
            subMenu: [
@@ -102,25 +102,25 @@ export default {
                    ]
                }
            ]
-       }
+       };
    },
    methods: {
-       handleClick(item, index) {
+       handleClick (item, index) {
            // 调整子菜单位置
-           let left = this.$refs.tab[index].getBoundingClientRect().left
-           let subMenu = this.$refs.subMenu
-           subMenu.style.left = `${left}px`
+           let left = this.$refs.tab[index].getBoundingClientRect().left;
+           let subMenu = this.$refs.subMenu;
+           subMenu.style.left = `${left}px`;
            // 设置子菜单内容
-           let isEqual = ArrayIsEqual(this.subMenu, item.children)
+           let isEqual = ArrayIsEqual(this.subMenu, item.children);
            if(isEqual) {
-               this.subMenuVisible = !this.subMenuVisible
+               this.subMenuVisible = !this.subMenuVisible;
            } else {
-               this.subMenu = item.children
-               this.subMenuVisible = true
+               this.subMenu = item.children;
+               this.subMenuVisible = true;
            }
        }
    }
-}
+};
 </script>
 
 <style scoped lang="stylus">

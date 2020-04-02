@@ -1,8 +1,9 @@
-import router from './index'
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
-import { getToken } from '@/utils/token'
-import store from '@/store'
+import router from './index';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+import { getToken } from '@/utils/token';
+import store from '@/store';
+import { Toast } from 'cube-ui';
 
 const whiteList = ['/login']; // 不重定向白名单
 
@@ -22,13 +23,17 @@ router.beforeEach((to, from, next) => {
                     store.dispatch('GenerateRoutes', roles)
                     .then(() => {
                         router.addRoutes(store.getters.addRouters);
-                    })
+                    });
                     next({...to, replace: true});
                 })
                 .catch(err => {
-                    
-                    next('/login')
-                })
+                    Toast.$create({
+                        time: 1000,
+                        txt: `${err.errorMessage}`,
+                        type: 'error'
+                    }).show();
+                    next('/login');
+                });
             } else {
                 next();
             }
@@ -41,8 +46,8 @@ router.beforeEach((to, from, next) => {
             NProgress.done();
         }
     }
-})
+});
 
 router.afterEach(() => {
     NProgress.done();
-})
+});

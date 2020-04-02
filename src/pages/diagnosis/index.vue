@@ -39,19 +39,19 @@
 </template>
 
 <script>
-import copyright from 'components/copyright'
+import copyright from 'components/copyright';
 export default {
    name: 'Diagnosis',
    components: {
        copyright
    },
-   data() {
+   data () {
        return {
            value: 'FISH',
            options: ['FISH', 'PCR毛细管电泳法', '数字PCR法', 'Sanger法', 'NGS', '抽提试剂']
-       }
+       };
    },
-}
+};
 </script>
 
 <style lang="stylus">

@@ -21,17 +21,17 @@
 import { mapActions } from 'vuex';
 export default {
     name: 'Login',
-    data() {
+    data () {
         return {
             username: null,
             password: null,
             eye: false
-        }
+        };
     },
     methods: {
         ...mapActions(['Login']),
         // 登录
-        handleLogin() {
+        handleLogin () {
             this.Login({
                 username: this.username,
                 password: this.password
@@ -39,11 +39,11 @@ export default {
             .then(() => {
                 this.$router.push({
                     path: '/'
-                })
-            })
+                });
+            });
         }
     }
-}
+};
 </script>
 
 <style scoped lang="stylus">
